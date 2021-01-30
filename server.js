@@ -1,5 +1,4 @@
 const dbConn = require('./database/config');
-const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -14,6 +13,7 @@ const qaRoutes = require('./routes/questionsAnswer');
 const productRoutes = require('./routes/products');
 const reviewRoutes = require('./routes/reviews');
 
+app.use(express.json());
 app.use(express.static('dist'));
 
 app.use('/products', productRoutes);
